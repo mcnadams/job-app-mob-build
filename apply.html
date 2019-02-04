@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="apply.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Get paid to sleep!</h1>
+    </header>
+    <main>
+        <form id="sleep-form">
+            <section id="about-you">
+                <h2>About You</h2>
+                <p>
+                    <label for="name">Your name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        minlength="1"
+                        required
+                        autocomplete="off"
+                        >
+                </p>
+                <p>
+                    <label for="city">Current city:</label>
+                    <input
+                        type="text"
+                        id="city"
+                        minlength="1"
+                        required
+                    >
+                </p>
+            </section>
+            <section>
+                <h2>Sleep Habits</h2>
+                <p>
+                    <label for="hours">Hours required per night:</label>
+                    <input
+                        type="number"
+                        id="hours"
+                        min="3"
+                        max="24"
+                    >
+                </p>
+                <p>Do you snore?</p>
+                <p>
+                    <label for="yes-snore">Yes</label>
+                    <input
+                        type="radio"
+                        name="snore"
+                        id="yes-snore"
+                        value="yes"
+                    >
+                    <label for="no-snore">No</label>
+                    <input
+                        type="radio"
+                        name="snore"
+                        id="no-snore"
+                        value="no"
+                    >
+                </p>
+                <p class="snore-type">If yes, how would you describe it?</p>
+                <p id="snore-type" class="snore-type">
+                    <label for="apnea">Apnea</label>
+                    <input 
+                        type="checkbox"
+                        id="apnea"
+                        name="snore-type[]"
+                        value="apnea"
+                        
+                    >    
+                    <label for="chainsaw">Chainsaw</label>
+                    <input 
+                        type="checkbox"
+                        id="chainsaw"
+                        name="snore-type[]"
+                        value="chainsaw"
+                    >    
+                    <label for="kitten">Kitten</label>
+                    <input 
+                        type="checkbox"
+                        id="kitten"
+                        name="snore-type[]"
+                        value="kitten"
+                    >    
+                    <label for="mermaid">Mermaid</label>
+                    <input 
+                        type="checkbox"
+                        id="mermaid"
+                        name="snore-type[]"
+                        value="mermaid"
+                    >    
+                </p>
+            </section>
+            <section id="requirements">
+                <h2>How much is your sleep worth?</h2>
+                <label for="salary">Desired salary:</label>
+                <select id="salary" name="salary">
+                    <option value="0-20">0 to $20k</option>
+                    <option value="20-80">20 to $80k</option>
+                    <option value="80-100">80 to $100k</option>
+                </select>
+            </section>
+            <p><button>Submit!</button></p>
+        </form>
+        <section id="show-applicant">
+
+        </section>
+    </main>
+
+    <script type="module" src="./src/apply.js"></script>
+</body>
+</html>
