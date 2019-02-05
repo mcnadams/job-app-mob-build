@@ -4,12 +4,11 @@ const cityNode = document.getElementById('city');
 const hoursRequiredNode = document.getElementById('hours');
 const yesSnoreNode = document.getElementById('yes-snore');
 const noSnoreNode = document.getElementById('no-snore');
-const snoreTypeNode = document.getElementById('snore-type');
 const apneaNode = document.getElementById('apnea');
 const chainsawNode = document.getElementById('chainsaw');
 const kittenNode = document.getElementById('kitten');
 const mermaidNode = document.getElementById('mermaid');
-const salaryNode = document.getElementById('salary').value;
+const salaryNode = document.getElementById('salary');
 
 yesSnoreNode.addEventListener('change', function() {
     if(yesSnoreNode.checked) {
@@ -21,9 +20,6 @@ yesSnoreNode.addEventListener('change', function() {
         chainsawNode.disabled = false;
         kittenNode.disabled = false;
         mermaidNode.disabled = false;
-        
-        console.log(hidden);
-        
     }
 });
 noSnoreNode.addEventListener('change', function(){
@@ -41,8 +37,6 @@ noSnoreNode.addEventListener('change', function(){
         chainsawNode.disabled = true;
         kittenNode.disabled = true;
         mermaidNode.disabled = true;
-
-        console.log(hidden);
     }
 });
 
@@ -50,11 +44,9 @@ formNode.addEventListener('submit', function(event) {
     event.preventDefault();
 
     const snores = document.getElementsByName('snore-type[]');
-    console.log(snores);
 
     const snoreSelections = [];
     for(let index = 0; index < snores.length; index++) {
-        console.log(snores[index].value);
         if(snores[index].checked) {
             snoreSelections.push(snores[index].value);
         }
@@ -65,10 +57,7 @@ formNode.addEventListener('submit', function(event) {
         city: cityNode.value,
         hours: hoursRequiredNode.value,
         snoreType: snoreSelections,
-        salary: salaryNode
-        
+        salary: salaryNode.value
     };
-
     console.log(applicant);
-
 });
