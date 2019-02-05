@@ -9,7 +9,7 @@ const apneaNode = document.getElementById('apnea');
 const chainsawNode = document.getElementById('chainsaw');
 const kittenNode = document.getElementById('kitten');
 const mermaidNode = document.getElementById('mermaid');
-
+const salaryNode = document.getElementById('salary').value;
 
 yesSnoreNode.addEventListener('change', function() {
     if(yesSnoreNode.checked) {
@@ -64,7 +64,8 @@ formNode.addEventListener('submit', function(event) {
         name: nameNode.value,
         city: cityNode.value,
         hours: hoursRequiredNode.value,
-        snoreType: snoreSelections
+        snoreType: snoreSelections,
+        salary: salaryNode
         
     };
 
