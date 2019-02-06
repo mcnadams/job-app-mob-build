@@ -10,6 +10,13 @@ const kittenNode = document.getElementById('kitten');
 const mermaidNode = document.getElementById('mermaid');
 const salaryNode = document.getElementById('salary');
 
+let applicants = [];
+
+const existingApplicantsJSON = window.localStorage.getItem('applicants');
+if(existingApplicantsJSON) {
+    applicants = JSON.parse(existingApplicantsJSON);
+}
+
 yesSnoreNode.addEventListener('change', function() {
     if(yesSnoreNode.checked) {
         const hidden = document.querySelectorAll('.snore-type');
@@ -60,9 +67,11 @@ formNode.addEventListener('submit', function(event) {
         salary: salaryNode.value
     };
     
-    const jsonApplicant = JSON.stringify(applicant);
+    applicants.push(applicant);
 
-    window.localStorage.setItem('applicant', jsonApplicant);
+    const applicantsJSON = JSON.stringify(applicants);
+
+    window.localStorage.setItem('applicants', applicantsJSON);
 
     window.location = './applicant-details.html';
 

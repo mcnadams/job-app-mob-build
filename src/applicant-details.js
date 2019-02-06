@@ -1,4 +1,4 @@
-const applicantJSON = window.localStorage.getItem('applicant');
+const applicantJSON = window.localStorage.getItem('applicants');
 const applicant = JSON.parse(applicantJSON);
 const nameNode = document.getElementById('name');
 const cityNode = document.getElementById('city');
