@@ -1,0 +1,26 @@
+table, td, tr{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 3px;
+}
+header {
+    background: white;
+    border: 3px solid black;
+}
+
+table {
+    background-image: url("./assets/nighty-night.jpeg");
+    background-size: 100%;
+}
+
+td {
+    background: black;
+    color: white;
+}
+
+body {
+    background-image: url("./assets/sleepy-sheepy.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 90px;
+}

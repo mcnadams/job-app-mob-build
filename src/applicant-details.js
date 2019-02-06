@@ -1,5 +1,5 @@
 const applicantJSON = window.localStorage.getItem('applicants');
-const applicant = JSON.parse(applicantJSON);
+const applicants = JSON.parse(applicantJSON);
 const nameNode = document.getElementById('name');
 const cityNode = document.getElementById('city');
 const hoursNode = document.getElementById('hours');
@@ -7,6 +7,11 @@ const snoreTypeNode = document.getElementById('snore-types');
 const salaryNode = document.getElementById('salary');
 const messageNode = document.getElementById('message');
 
+console.log(applicantJSON);
+if(!applicantJSON) {
+    window.location = './index.html';
+}
+const applicant = applicants[applicants.length - 1];
 nameNode.textContent = applicant.name;
 cityNode.textContent = applicant.city;
 hoursNode.textContent = applicant.hours;
