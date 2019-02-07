@@ -11,11 +11,17 @@ header {
 table {
     background-image: url("./assets/nighty-night.jpeg");
     background-size: 100%;
+    border-collapse: collapse;
 }
 
 td {
-    background: black;
-    color: white;
+    background: white;
+    color: black;
+    padding: 8px;
+}
+
+th {
+    background: white;
 }
 
 body {

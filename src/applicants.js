@@ -18,11 +18,12 @@ for(let index = 0; index < applicants.length; index++) {
     const row = document.createElement('tr');
     const name = document.createElement('td');
     const city = document.createElement('td');
+    const link = document.createElement('a');
+    link.href = 'applicant-details.html?name=' + encodeURIComponent(applicant.name);
 
-
-    name.textContent = applicant.name;
+    link.textContent = applicant.name;
     city.textContent = applicant.city;
-
+    name.appendChild(link);
     row.appendChild(name);
     row.appendChild(city);
     

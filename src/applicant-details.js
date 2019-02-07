@@ -1,5 +1,4 @@
 const applicantJSON = window.localStorage.getItem('applicants');
-const applicants = JSON.parse(applicantJSON);
 const nameNode = document.getElementById('name');
 const cityNode = document.getElementById('city');
 const hoursNode = document.getElementById('hours');
@@ -11,7 +10,24 @@ console.log(applicantJSON);
 if(!applicantJSON) {
     window.location = './index.html';
 }
-const applicant = applicants[applicants.length - 1];
+const applicants = JSON.parse(applicantJSON);
+
+let applicant = null;
+
+const urlParams = new URLSearchParams(window.location.search);
+const name = urlParams.get('name');
+
+for(let index = 0; index < applicants.length; index++) {
+    const currentApplicant = applicants[index];
+    if(currentApplicant.name === name) {
+        applicant = currentApplicant;
+        break;
+    }
+}
+if(applicant === null) {
+    window.location = './index.html';
+}
+
 nameNode.textContent = applicant.name;
 cityNode.textContent = applicant.city;
 hoursNode.textContent = applicant.hours;
